@@ -1,23 +1,42 @@
 # PUSH REQUEST: SETP 1
 
-name : test1
+# name : test1
 
-on:
-  push:
-    branches:
-      - main
+# on:
+#   push:
+#     branches:
+#       - main
+
+# jobs:
+#   branch-name:
+#     runs-on: ubuntu-latest
+
+#     steps:
+#     - name: Checkout code
+#       uses: actions/checkout@v3
+
+#     - name: Get the branch name
+#       id: get_branch_name
+#       run: echo "BRANCH_NAME=$(echo ${GITHUB_REF#refs/heads/})" >> $GITHUB_ENV
+
+#     - name: main to the log
+#       run: echo "Branch name is ${{ env.BRANCH_NAME }}"
+
+
+# ---------------------------
+
+name : get branch name
+
+on: [push]
+
 
 jobs:
-  branch-name:
+ get_branch_name:
     runs-on: ubuntu-latest
 
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
-
+  steps:
     - name: Get the branch name
-      id: get_branch_name
-      run: echo "BRANCH_NAME=$(echo ${GITHUB_REF#refs/heads/})" >> $GITHUB_ENV
+      evn:
+        BRANCH_NAME: ${{ github.ref}}
+      run: echo "branch name is $BRANCH_NAME "
 
-    - name: main to the log
-      run: echo "Branch name is ${{ env.BRANCH_NAME }}"
