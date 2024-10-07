@@ -10,5 +10,9 @@ on:
 jobs:
   my_first_job:
     name: main
+    steps:
+    - run: echo "main"
   my_second_job:
     name: dev-1
+    steps:
+    - run: echo "dev-1"
