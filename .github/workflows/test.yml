@@ -1,0 +1,18 @@
+# PUSH REQUEST:
+
+name : test1
+
+on:
+  push:
+    branches:
+      - main
+
+
+jobs:
+  job-1:
+    runs-on: ubuntu-latest
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+      cancel-in-progress: true
+
+
