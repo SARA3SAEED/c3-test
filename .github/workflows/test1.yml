@@ -9,6 +9,7 @@ on:
 
 jobs:
   my_first_job:
+    runs-on: ubuntu-latest
     name: main
     steps:
     - run: echo "main"
