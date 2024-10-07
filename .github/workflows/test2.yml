@@ -22,7 +22,7 @@
 
 # -----------------------------------------
 
-name : get branch name
+name : test2
 
 on: [push]
 
