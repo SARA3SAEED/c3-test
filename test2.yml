@@ -1,0 +1,14 @@
+# PUSH REQUEST: SETP 2
+
+name : test2
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  my_first_job:
+    name: main
+  my_second_job:
+    name: dev-1
