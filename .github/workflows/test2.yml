@@ -1,20 +1,44 @@
 # PUSH REQUEST: SETP 2
 
-name : test2
+# name : test2
 
-on:
-  push:
-    branches:
-      - main
+# on:
+#   push:
+#     branches:
+#       - main
+
+# jobs:
+#   my_first_job:
+#     runs-on: ubuntu-latest
+#     name: main
+#     steps:
+#     - run: echo "main"
+#   my_second_job:
+#     runs-on: ubuntu-latest
+#     name: dev-1
+#     steps:
+#     - run: echo "dev-1"
+
+
+# -----------------------------------------
+
+name : get branch name
+
+on: [push]
+
 
 jobs:
-  my_first_job:
-    runs-on: ubuntu-latest
-    name: main
-    steps:
-    - run: echo "main"
-  my_second_job:
-    runs-on: ubuntu-latest
-    name: dev-1
-    steps:
-    - run: echo "dev-1"
+  print_job_name1:
+      runs-on: ubuntu-latest
+      steps: 
+        - name: Get the branch name
+          env:
+            JOB_NAME1: ${{ github.job }}
+          run: echo "branch name is $JOB_NAME1 "
+  print_job_name2:
+      runs-on: ubuntu-latest
+      steps: 
+        - name: Get the branch name
+          env:
+            JOB_NAME2: ${{ github.job }}
+          run: echo "branch name is $JOB_NAME2 "
