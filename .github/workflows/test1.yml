@@ -31,12 +31,12 @@ on: [push]
 
 
 jobs:
- get_branch_name:
-    runs-on: ubuntu-latest
+  get_branch_name:
+      runs-on: ubuntu-latest
 
-  steps:
-    - name: Get the branch name
-      evn:
-        BRANCH_NAME: ${{ github.ref}}
-      run: echo "branch name is $BRANCH_NAME "
+      steps:
+        - name: Get the branch name
+          evn:
+            BRANCH_NAME: ${{ github.ref}}
+          run: echo "branch name is $BRANCH_NAME "
 
