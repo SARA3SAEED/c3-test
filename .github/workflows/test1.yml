@@ -36,7 +36,7 @@ jobs:
 
       steps:
         - name: Get the branch name
-          evn:
+          env:
             BRANCH_NAME: ${{ github.ref}}
           run: echo "branch name is $BRANCH_NAME "
 
